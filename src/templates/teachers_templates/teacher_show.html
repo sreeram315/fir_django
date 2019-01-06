@@ -1,0 +1,20 @@
+{% extends "teachers_templates/teacher_base.html" %}
+
+{% block content %}
+
+<h3 style="text-align: center; "> 
+	<!-- There {% if obj_list.count > 1%} are {% else %} is {% endif %} {{ obj_list.count }} {% if obj_list.count > 1%} students {% else %} student {% endif %} listed here:<br/><br/><br/><br/><br/></h3> -->
+<div style="color: red"> Teacher count: &ensp; {{ obj_list.count }}</h3><br/><br/><br/><br/>
+{% for obj in obj_list %}
+<div style="text-align: left;">
+	<b>Name</b> 					: 	{% if obj_list.count > 1 %}<a href='{{ obj.get_absolute_url }}'> {% endif %} {{ obj.name }}</a><br/>
+	<b>University ID</b>			: 	{{ obj.uid }}<br/>
+	<b>Department 			   </b>	:	{{ obj.department }}<br/>
+	<b>Description 			   </b>	:	{{ obj.description }}<br/>
+	<br/><br/>
+
+{% endfor %}
+
+
+		
+{% endblock %}

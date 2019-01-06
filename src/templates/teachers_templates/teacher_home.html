@@ -1,0 +1,17 @@
+{% extends "teachers_templates/teacher_base.html" %}
+
+{% block content %}
+	I am {{stu_name}}, age: {{stu_age}}, giving numbers<br/>
+	<h2> Number are: </h2><br/><br/>
+	{% if boolian %}
+		{% for n in num %}
+			Number is {{n}} which is 
+			{% if n|divisibleby:'2' %}Even
+			{% else %}
+			Odd
+			{% endif %}
+			<br/>
+		{% endfor %}
+	{% endif %}
+
+{% endblock content %}

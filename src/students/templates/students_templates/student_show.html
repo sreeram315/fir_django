@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3 style="text-align: center; "> 
+	<!-- There {% if obj_list.count > 1%} are {% else %} is {% endif %} {{ obj_list.count }} {% if obj_list.count > 1%} students {% else %} student {% endif %} listed here:<br/><br/><br/><br/><br/></h3> -->
+<div style="color: red"> Student count: &ensp; {{ obj_list.count }}</h3><br/><br/><br/><br/>
+
+	<div class="input-group-btn" style="float: right">
+          
+	<input type="text" class="form-inline" style="" name="p" placeholder="Search">
+	<button class="btn btn-primary" style="" type="submit">Search</button>
+
+	</div><br/><br/>
+
+{% for obj in obj_list %}
+<div class="row">
+	<div class="col-sm-12" style="text-align: left;">
+		{% if obj_list.count > 1 %}<a href='{{ obj.get_absolute_url }}'> {% endif %} <h4>{{ obj.name }}</h4></a><br/>
+		<b>Registration number</b>	: 	{{ obj.reg_no }}<br/>
+		<b>CGPA 			   </b>	:	{{ obj.cgpa }}<br/>
+		<b>Owner 			   </b>	:	{{ obj.owner }}<br/>
+		<br/><br/>
+	</div>
+</div>
+<hr/>
+
+
+
+{% endfor %}
+
+
+		
+{% endblock %}

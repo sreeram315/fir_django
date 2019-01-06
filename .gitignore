@@ -1,0 +1,10 @@
+*.py[cod]
+.DS_Store
+__pycache__/
+*.py[cod]
+*.class
+
+
+lib/
+src/db.sqlite3
+

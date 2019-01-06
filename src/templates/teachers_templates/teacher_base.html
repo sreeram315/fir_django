@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sreeram Maram</title>
+</head>
+<body>
+{% include 'snippets/css.html' %}
+	<div class"main" style="text-align: center;">
+
+<h3> Hello re!</h3>
+<a href='/'> Home page</a>&ensp;|&ensp;
+<a href={% url 'home2' %}> Home page 2</a>&ensp;|&ensp;
+<a href={% url 'contact' %}>Contact</a>&ensp;|&ensp;
+<a href={% url 'teachers:list' %}> Teacher List</a>&ensp;|&ensp;
+<a href={% url 'teachers:add' %}> Add Teacher</a>&ensp;|&ensp;
+<a href={% url 'home' %}> Student Base</a><br/><br/><br/>
+<div class='container' style="padding-top: 2cm">
+{% block content %} {% endblock content %}
+</div>
+{% include 'snippets/js.html' %}
+</body>
+</html>

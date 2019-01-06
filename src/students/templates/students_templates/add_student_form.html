@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+ 
+<script type="text/javascript">
+	function saved(){
+		save_sucess.text = "Saves sucessfully"
+	}
+</script>
+
+{% block content %}
+<div style="text-align: center;">
+<h1 style="text-align: center;"> ADD STUDENT FORM</h1><br/><br/>
+
+<form method = 'POST'>{% csrf_token %}
+	{{ form.as_p }}
+	<!-- <input type="text" name="name" placeholder="Name"><br/>
+	<input type="text" name="reg_no" placeholder="Reg no."><br/>
+	<input type="text" name="cgpa" placeholder="CGPA"><br/>  -->
+	<button type="submit" onclick="saved()">save</button><br/>
+	<h3 class="save_sucess">saved</h3>
+</form>
+
+
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 style="text-align: left; color: red"> Students list</h1><br/>	
+
+{% for obj in queryset %}
+<div style="text-align: left;">
+	<b>Name</b> 			   	: 	{{ obj.name }}<br/>
+	<b>Registration number</b>	: 	{{ obj.reg_no }}<br/>
+	<b>CGPA 			   </b>	:	{{ obj.CGPA }}<br/><br/>
+{% endfor %}
+
+{% endblock %}
